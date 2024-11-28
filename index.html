@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>اختبار الهكر والاختراق</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      color: #333;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      padding: 20px;
+      max-width: 600px;
+      margin: auto;
+      background: #fff;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+    h1 {
+      color: #444;
+    }
+    .question {
+      margin: 20px 0;
+    }
+    button {
+      background-color: #28a745;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #218838;
+    }
+    input[type="text"] {
+      padding: 10px;
+      width: calc(100% - 20px);
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .result {
+      margin-top: 20px;
+      padding: 15px;
+      background: #f8f9fa;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>أهلا وسهلا في اختبار الاختراق</h1>
+    <p>يلا جاوب الأسئلة عشان تعرف علامتك!</p>
+
+    <!-- إدخال اسم الطالب والشعبة -->
+    <input type="text" id="studentName" placeholder="اكتب اسمك هون">
+    <input type="text" id="studentGroup" placeholder="اكتب شعبة صفك هون">
+
+    <!-- الأسئلة -->
+    <div id="quiz">
+      <!-- الأسئلة تبدأ هنا -->
+      <div class="question">
+        <p>1. شو هو SQL Injection؟</p>
+        <button onclick="answerQuestion(1, true)">إدخال استعلامات ضارة</button>
+        <button onclick="answerQuestion(1, false)">تشفير البيانات</button>
+      </div>
+      <div class="question">
+        <p>2. شو الهدف من SSL؟</p>
+        <button onclick="answerQuestion(2, true)">تشفير البيانات</button>
+        <button onclick="answerQuestion(2, false)">زيادة سرعة الإنترنت</button>
+      </div>
+      <div class="question">
+        <p>3. شو يعني "bypass authentication"؟</p>
+        <button onclick="answerQuestion(3, true)">تجاوز إجراءات تسجيل الدخول</button>
+        <button onclick="answerQuestion(3, false)">اختراق الجهاز</button>
+      </div>
+      <div class="question">
+        <p>4. شو هي البرمجة الأخلاقية؟</p>
+        <button onclick="answerQuestion(4, true)">استخدام تقنيات الاختراق لحماية الأنظمة</button>
+        <button onclick="answerQuestion(4, false)">اختراق الأنظمة بدون إذن</button>
+      </div>
+      <div class="question">
+        <p>5. شو هو الهدف من SQL Bypass؟</p>
+        <button onclick="answerQuestion(5, true)">الوصول لبيانات بدون إذن</button>
+        <button onclick="answerQuestion(5, false)">تحسين أداء الاستعلامات</button>
+      </div>
+      <!-- أضف بقية الأسئلة -->
+      <div class="question">
+        <p>6. شو هو الـ Firewall؟</p>
+        <button onclick="answerQuestion(6, true)">جدار حماية</button>
+        <button onclick="answerQuestion(6, false)">برنامج اختراق</button>
+      </div>
+      <div class="question">
+        <p>7. شو هو الهدف من Brute Force؟</p>
+        <button onclick="answerQuestion(7, true)">اختراق كلمات المرور</button>
+        <button onclick="answerQuestion(7, false)">تشفير البيانات</button>
+      </div>
+      <div class="question">
+        <p>8. شو يعني HTTPS؟</p>
+        <button onclick="answerQuestion(8, true)">بروتوكول آمن لنقل البيانات</button>
+        <button onclick="answerQuestion(8, false)">زيادة سرعة الإنترنت</button>
+      </div>
+      <div class="question">
+        <p>9. شو هو Phishing؟</p>
+        <button onclick="answerQuestion(9, true)">احتيال للحصول على معلومات حساسة</button>
+        <button onclick="answerQuestion(9, false)">تشفير البيانات</button>
+      </div>
+      <div class="question">
+        <p>10. شو هو التشفير؟</p>
+        <button onclick="answerQuestion(10, true)">تحويل البيانات لصيغة غير مقروءة</button>
+        <button onclick="answerQuestion(10, false)">نسخ البيانات</button>
+      </div>
+      <div class="question">
+        <p>11. شو هو الـ DoS Attack؟</p>
+        <button onclick="answerQuestion(11, true)">تعطيل الخدمة عبر الهجوم</button>
+        <button onclick="answerQuestion(11, false)">تسريع الشبكة</button>
+      </div>
+      <div class="question">
+        <p>12. شو يعني Social Engineering؟</p>
+        <button onclick="answerQuestion(12, true)">اختراق عبر التلاعب النفسي</button>
+        <button onclick="answerQuestion(12, false)">اختراق عبر البرمجيات</button>
+      </div>
+      <div class="question">
+        <p>13. شو هو VPN؟</p>
+        <button onclick="answerQuestion(13, true)">شبكة خاصة مشفرة</button>
+        <button onclick="answerQuestion(13, false)">نوع من الهجمات</button>
+      </div>
+      <div class="question">
+        <p>14. شو يعني كلمة "exploit"؟</p>
+        <button onclick="answerQuestion(14, true)">استغلال ثغرة أمنية</button>
+        <button onclick="answerQuestion(14, false)">تسريع النظام</button>
+      </div>
+      <div class="question">
+        <p>15. شو هو Penetration Testing؟</p>
+        <button onclick="answerQuestion(15, true)">اختبار أمان النظام</button>
+        <button onclick="answerQuestion(15, false)">هجوم لتدمير النظام</button>
+      </div>
+    </div>
+
+    <!-- زر إظهار النتيجة -->
+    <button onclick="showResult()">أظهر النتيجة</button>
+
+    <!-- عرض النتيجة -->
+    <div id="result" class="result" style="display: none;"></div>
+  </div>
+
+  <script>
+    // بيانات المستخدم
+    let studentName = "";
+    let studentGroup = "";
+
+    // الإجابات الصحيحة
+    const answers = {
+      1: true, 2: true, 3: true, 4: true, 5: true,
+      6: true, 7: true, 8: true, 9: true, 10: true,
+      11: true, 12: true, 13: true, 14: true, 15: true
+    };
+    let score = 0;
+
+    // التحقق من الإجابة
+    function answerQuestion(questionNumber, userAnswer) {
+      if (answers[questionNumber] === userAnswer) {
+        score++;
+      }
+    }
+
+    // إظهار النتيجة
+    function showResult() {
+      studentName = document.getElementById("studentName").value;
+      studentGroup = document.getElementById("studentGroup").value;
+
+      if (!studentName || !studentGroup) {
+        alert("لو سمحت عَبّي اسمك وشعبتك!");
+        return;
+      }
+
+      const resultDiv = document.getElementById("result");
+      resultDiv.style.display = "block";
+      resultDiv.innerHTML = `
+        <p>اسم الطالب: ${studentName}</p>
+        <p>الشعبة: ${studentGroup}</p>
+        <p>علامتك: ${score}/15</p>
+      `;
+    }
+  </script>
+</body>
+</html>
